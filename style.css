@@ -19,6 +19,9 @@ body{
     z-index: -
     1;
 }
+.logo{
+    display: flex;
+}
 .layer-blur{
     height: 0;
     width: 30rem;
@@ -54,6 +57,7 @@ nav{
     margin-left: -5%;
 }
 nav a{
+    cursor: pointer;
     font-size: 1rem;
     letter-spacing: 0.1rem;
     transition: color 0.2s ease;
@@ -191,6 +195,11 @@ main{
         scale: 0.5;
         top: -25%;
         right: 0;
+    }
+    .spline-bg{
+        scale: 0.5;
+        top: -25%;
+        right: 0%;
     }
     .content{
         max-width: 30rem;
