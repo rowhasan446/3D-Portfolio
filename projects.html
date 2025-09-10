@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - ROW-CODE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        body {
+            background: #1a1a1a;
+            color: #e7e7e7;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5rem;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            font-weight: 300;
+            color: #fff;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        nav a {
+            font-size: 1rem;
+            letter-spacing: 0.1rem;
+            text-decoration: none;
+            color: #e7e7e7;
+        }
+
+        .btn-signing {
+            background-color: #a7a7a7;
+            color: #000;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            border: none;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: calc(90vh - 6rem);
+            padding: 0 5rem;
+        }
+
+        .content {
+            max-width: 40rem;
+            margin-left: 10%;
+        }
+
+        .tag-box {
+            position: relative;
+            width: 18rem;
+            height: 2.5rem;
+            border-radius: 50px;
+            background: #6600c5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 10px #6600c5;
+        }
+
+        .tag {
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .content h1 {
+            font-size: 4rem;
+            font-weight: 600;
+            letter-spacing: 0.1rem;
+            margin: 1rem 0;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            color: #a7a7a7;
+            max-width: 35rem;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn-get-started {
+            text-decoration: none;
+            border: 1px solid #2a2a2a;
+            padding: 0.7rem 1.2rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #fff;
+            background: #a7a7a7;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-get-started:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        .btn-signing-main {
+            text-decoration: none;
+            background-color: #6600c5;
+            color: #fff;
+            padding: 0.6rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .btn-signing-main:hover {
+            background-color: #4d0099;
+        }
+
+        .layer-blur {
+            height: 0;
+            width: 30rem;
+            position: absolute;
+            top: 20%;
+            right: 0;
+            box-shadow: 0 0 700px 15px white;
+            rotate: -30deg;
+            z-index: -1;
+        }
+
+        .image-gradient {
+            position: absolute;
+            top: 0;
+            right: 0;
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        .spline-bg {
+            position: absolute;
+            top: 10%;
+            right: -20%;
+            bottom: 10%;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 15rem;
+            padding: 0 5rem;
+        }
+
+        .project-box {
+            background: #2a2a2a;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            height: 400px;
+            /* Vertical height */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-box:hover {
+            transform: scale(1.05);
+        }
+
+        .project-image {
+            height: 200px;
+            background: #444;
+            /* Placeholder for image */
+            margin-bottom: 1rem;
+            border-radius: 5px;
+        }
+
+        .project-box h3 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-box p {
+            color: #a7a7a7;
+            font-size: 1rem;
+            flex-grow: 1;
+        }
+
+        .spline-bg2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 110%;
+            height: 100%;
+            z-index: -1;
+            /* keep it behind everything */
+
+        }
+        .scroll-btn {
+  position: absolute;
+  bottom: 420px;
+  /* left: 50%; */
+  right: 30px;
+  transform: translateX(-50%);
+  padding: 12px 30px;
+  border: 2px solid #00ffff;
+  background: transparent;
+  color: #00ffff;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff;
+  transition: all 0.3s ease;
+  animation: bounce 2s infinite, glow 1.5s infinite alternate;
+  z-index: -10;
+}
+
+.scroll-btn:hover {
+  background: #00ffff;
+  color: #000;
+  box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 60px #00ffff;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 8px #00ffff, 0 0 15px #00ffff, 0 0 30px #00ffff;
+  }
+  to {
+    box-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff, 0 0 60px #00ffff;
+  }
+}
+
+ </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <img class="image-gradient" src="gradient.png" alt="gradient">
+    <div class="layer-blur"></div>
+    <div class="container">
+        <header>
+            <h1 class="logo">ROW-CODE</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <button class="btn-signing">Login</button>
+        </header>
+        <main>
+            <div class="content">
+                <div class="tag-box">
+                    <div class="tag">MY PROJECTS &wedbar;</div>
+                </div>
+                <h1>Showcase of Work</h1>
+                <p class="description">
+                    Explore my latest projects that highlight my skills in web development and design. Each project
+                    reflects my dedication to creating innovative solutions.
+                </p>
+                <button class="scroll-btn" onclick="window.scrollTo({top: window.innerHeight, behavior: 'smooth'})">
+                    ↓ Scroll Down
+                </button>
+                <div class="buttons">
+                    <a href="#" class="btn-get-started">View All &gt;</a>
+                    <a href="#" class="btn-signing-main">Get Started &gt;</a>
+                    
+                </div>
+
+            </div>
+
+
+            <spline-viewer class="spline-bg2"
+                url="https://prod.spline.design/60WeEM5hPwnYO8rm/scene.splinecode"></spline-viewer>
+
+            <div class="project-grid">
+                <div class="project-box" data-aos="fade-up">
+                    <div class="project-image"></div>
+                    <h3>Project Alpha</h3>
+                    <p>A demo web app showcasing modern UI design and responsive layouts. Built with HTML, CSS, and
+                        JavaScript.</p>
+                </div>
+                <div class="project-box" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image"></div>
+                    <h3>Project Beta</h3>
+                    <p>An e-commerce prototype with dynamic features and a sleek interface. Developed using React and
+                        Tailwind CSS.</p>
+                </div>
+                <div class="project-box" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image"></div>
+                    <h3>Project Gamma</h3>
+                    <p>A portfolio site with 3D animations, created using Spline and integrated with a custom backend.
+                    </p>
+                </div>
+            </div>
+
+
+        </main>
+
+    </div>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.57/build/spline-viewer.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <div style="background-color: #111010; padding: 20px; overflow: hidden; white-space: nowrap;">
+        <div style="display: inline-block; animation: slide 30s infinite linear;">
+            <p style="color: #fff; margin: 0 20px; display: inline-block;">"Great service! Highly recommend!" - Atiqul
+                Islam</p>
+            <p style="color: #fff; margin: 0 20px; display: inline-block;">"Amazing experience, will use again!" - Hrid
+                Raian Khan</p>
+            <p style="color: #fff; margin: 0 20px; display: inline-block;">"Top-notch support!" -Jhankar Mahabub</p>
+            <p style="color: #fff; margin: 0 20px; display: inline-block;">"He is highly recommended." -CHRIS EVANS</p>
+            <p style="color: #fff; margin: 0 20px; display: inline-block;">"CHanged My website experience" -Sajiah Islam
+            </p>
+            <p style="color: #fff; margin: 0 20px; display: inline-block;">"After Support is phenomenal" -Siam </p>
+            <p style="color: #fff; margin: 0 20px; display: inline-block;">"Highly Professionals" -Saif khan</p>
+        </div>
+        <style>
+            @keyframes slide {
+                0% {
+                    transform: translateX(100%);
+                }
+
+                100% {
+                    transform: translateX(-100%);
+                }
+            }
+        </style>
+    </div>
+    <footer
+        style="background-color: #000000; color: #fff; padding: 20px; display: flex; justify-content: space-between; max-width: 1200px; margin: 0 auto; flex-direction: column; align-items: center;">
+        <div style="width: 100%; display: flex; justify-content: space-between;">
+            <div>
+                <p>Email: rowhasan446@gmail.com</p>
+                <p>Phone: 01867019582</p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/rownak-hasan-6864572a3/" style="color: #bf00ff;">Your
+                        Profile</a></p>
+            </div>
+            <div style="border: 2px solid #bf00ff; padding: 10px; width: 200px;">
+                <p>Message me:</p>
+                <textarea
+                    style="width: 100%; height: 50px; background-color: #333; color: #fff; border: none; resize: none;"
+                    placeholder="Type your message..."></textarea>
+            </div>
+        </div>
+        <p style="margin-top: 20px;">&copy; 2025 Rownak Hasan. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

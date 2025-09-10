@@ -201,6 +201,11 @@ main{
         top: -25%;
         right: 0%;
     }
+    .spline-bg2{
+        scale: 0.5;
+        top: -25%;
+        right: 0%;
+    }
     .content{
         max-width: 30rem;
         margin-left: 10%;
